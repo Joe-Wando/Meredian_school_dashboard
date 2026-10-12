@@ -1,0 +1,36 @@
+// Design system Meredian — tokens partages (charte-graphique-meridian.md)
+
+export const COLORS = {
+  ground: "#F6F2E6",
+  ink: "#0B1F4D",
+  muted: "#5B6684",
+  accent: "#0056D2",
+  line: "#E6DFCD",
+  lineStrong: "#D5CBB3",
+};
+
+// Couleurs par matiere — orientent dans le contenu, pas la marque.
+export const CATEGORIES = {
+  Histoire: { color: "#B45309", tint: "#FEF3C7", text: "#92400E" },
+  Droit: { color: "#1D4ED8", tint: "#DBEAFE", text: "#1E40AF" },
+  Informatique: { color: "#059669", tint: "#D1FAE5", text: "#047857" },
+  RH: { color: "#A21CAF", tint: "#FAE8FF", text: "#86198F" },
+};
+
+export const CATEGORY_NAMES = Object.keys(CATEGORIES);
+
+export const LEVELS = ["L1", "L2", "L3", "Formation Pro"];
+
+// Libelles exacts attendus par l'API (architecture-technique.md §2.2).
+export const COURSE_TEMPLATES = ["Théorique illustré", "Pratique guidée", "Mixte"];
+
+export const SECTION_TYPES = [
+  { value: "reading", label: "Lecture (texte)" },
+  { value: "image", label: "Photo / galerie" },
+  { value: "video", label: "Video" },
+  { value: "quiz", label: "Quiz / evaluation" },
+];
+
+export function catStyle(name) {
+  return CATEGORIES[name] || { color: COLORS.muted, tint: "#F3F4F6", text: COLORS.muted };
+}

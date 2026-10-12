@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f6f2e6;
+  color: #0b1f4d;
+  font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  h1,
+  h2 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-navy px-6 py-3 font-display text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent disabled:pointer-events-none disabled:opacity-60;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 font-display text-sm font-semibold text-white shadow-lg shadow-accent/25 transition hover:-translate-y-0.5 hover:bg-white hover:text-navy disabled:pointer-events-none disabled:opacity-60;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-navy/15 px-6 py-3 font-display text-sm font-semibold text-navy transition hover:border-navy hover:bg-navy hover:text-white disabled:pointer-events-none disabled:opacity-60;
+  }
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70 px-6 py-3 font-display text-sm font-semibold text-white transition hover:bg-white/10;
+  }
+  .field {
+    @apply w-full rounded-2xl border-2 border-transparent bg-mist px-4 py-3 text-sm font-medium text-ink outline-none transition placeholder:text-ink/40 focus:border-accent focus:bg-white;
+  }
+  .card {
+    @apply rounded-3xl bg-white shadow-sm shadow-navy/5;
+  }
+  .eyebrow {
+    @apply font-display text-xs font-bold uppercase tracking-widest text-accent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
